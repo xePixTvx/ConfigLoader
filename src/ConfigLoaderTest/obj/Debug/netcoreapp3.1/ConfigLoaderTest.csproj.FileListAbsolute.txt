@@ -1,0 +1,16 @@
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.exe
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.deps.json
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.runtimeconfig.json
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.runtimeconfig.dev.json
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.dll
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoaderTest.pdb
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoader.dll
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\bin\Debug\netcoreapp3.1\ConfigLoader.pdb
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.csprojAssemblyReference.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.AssemblyInfoInputs.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.AssemblyInfo.cs
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.csproj.CopyComplete
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.dll
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.pdb
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoaderTest\obj\Debug\netcoreapp3.1\ConfigLoaderTest.genruntimeconfig.cache

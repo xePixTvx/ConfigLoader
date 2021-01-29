@@ -1,0 +1,9 @@
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\bin\Debug\netcoreapp3.1\ConfigLoader.deps.json
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\bin\Debug\netcoreapp3.1\ConfigLoader.dll
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\bin\Debug\netcoreapp3.1\ConfigLoader.pdb
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.csprojAssemblyReference.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.AssemblyInfoInputs.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.AssemblyInfo.cs
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.dll
+C:\Users\Mario\Desktop\ConfigLoader\ConfigLoader\obj\Debug\netcoreapp3.1\ConfigLoader.pdb

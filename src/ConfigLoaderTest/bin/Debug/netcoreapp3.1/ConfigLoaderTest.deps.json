@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ConfigLoaderTest/1.0.0": {
+        "dependencies": {
+          "ConfigLoader": "1.0.0"
+        },
+        "runtime": {
+          "ConfigLoaderTest.dll": {}
+        }
+      },
+      "ConfigLoader/1.0.0": {
+        "runtime": {
+          "ConfigLoader.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConfigLoaderTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConfigLoader/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
