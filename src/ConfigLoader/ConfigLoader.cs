@@ -29,21 +29,28 @@ namespace ConfigLoader
         public void LoadConfig()
         {
             List<ContextLine> LexedLines;
+            List<Dvar.Dvar> ParsedLines;
 
             //Lex
             Lexer lex = new Lexer();
             LexedLines = lex.LexConfigFile(FilePath);
             if(LexedLines == null)
             {
-                Console.WriteLine("Lexing Error Fuck!!!");
+                Console.WriteLine("Lexing Failed!");
             }
 
 
             //Parse
             Parser pars = new Parser();
-            pars.ParseContext(LexedLines);
-
-
+            ParsedLines = pars.ParseContext(LexedLines);
+            if(ParsedLines == null)
+            {
+                Console.WriteLine("Parsing Failed!");
+            }
+            else
+            {
+                Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
+            }
 
 
         }
