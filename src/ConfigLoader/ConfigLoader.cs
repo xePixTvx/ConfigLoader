@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using ConfigLoader.Lexing;
 using ConfigLoader.Parsing;
+using ConfigLoader.Dvar;
+
+
+/*
+ *      TODO:
+ *              ERROR Handling
+ */
 
 
 namespace ConfigLoader
@@ -9,6 +16,7 @@ namespace ConfigLoader
     public class ConfigLoader
     {
         private string filePath;
+        private DvarHandler Handler;
 
 
         public ConfigLoader(string _filePath)
@@ -38,18 +46,22 @@ namespace ConfigLoader
             {
                 Console.WriteLine("Lexing Failed!");
             }
-
-
-            //Parse
-            Parser pars = new Parser();
-            ParsedLines = pars.ParseContext(LexedLines);
-            if(ParsedLines == null)
-            {
-                Console.WriteLine("Parsing Failed!");
-            }
             else
             {
-                Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
+                //Parse
+                Parser pars = new Parser();
+                ParsedLines = pars.ParseContext(LexedLines);
+                if (ParsedLines == null)
+                {
+                    Console.WriteLine("Parsing Failed!");
+                }
+                else
+                {
+                    Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
+
+                    //Dvar Handler
+                    Handler = new DvarHandler(ParsedLines);
+                }
             }
 
 
