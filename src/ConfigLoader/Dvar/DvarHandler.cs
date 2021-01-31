@@ -19,7 +19,7 @@ namespace ConfigLoader.Dvar
 
 
 
-            Console.WriteLine("Full List: " + DvarListFull.Count);
+            Console.WriteLine("Full List Size: " + DvarListFull.Count);
         }
 
 

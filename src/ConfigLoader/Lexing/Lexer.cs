@@ -6,17 +6,11 @@ namespace ConfigLoader.Lexing
 {
     internal class Lexer
     {
-        public Lexer()
-        {
-            //Add some testing stuff?
-        }
-
-
         public List<ContextLine> LexConfigFile(string file)
         {
             if(!File.Exists(file))
             {
-                Console.WriteLine("ConfigFile Not Found!");
+                ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, file + " not found!");
                 return null;
             }
 
@@ -25,7 +19,6 @@ namespace ConfigLoader.Lexing
 
             //StreamReader
             StreamReader Reader;
-
 
             try
             {

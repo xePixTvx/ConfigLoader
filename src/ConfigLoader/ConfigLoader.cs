@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ConfigLoader.Lexing;
 using ConfigLoader.Parsing;
 using ConfigLoader.Dvar;
+using ConfigLoader.Error;
 
 
 /*
@@ -17,6 +18,8 @@ namespace ConfigLoader
     {
         private string filePath;
         private DvarHandler Handler;
+
+        public static ErrorHandler Error;
 
 
         public ConfigLoader(string _filePath)
@@ -36,6 +39,8 @@ namespace ConfigLoader
 
         public void LoadConfig()
         {
+            Error = new ErrorHandler(true);
+
             List<ContextLine> LexedLines;
             List<Dvar.Dvar> ParsedLines;
 
