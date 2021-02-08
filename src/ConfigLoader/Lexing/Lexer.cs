@@ -10,7 +10,7 @@ namespace ConfigLoader.Lexing
         {
             if(!File.Exists(file))
             {
-                ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, file + " not found!");
+                ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "Cannot find Config File: " + file);
                 return null;
             }
 
@@ -56,7 +56,7 @@ namespace ConfigLoader.Lexing
             }
             catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, e.Message);
                 return null;
             }
 

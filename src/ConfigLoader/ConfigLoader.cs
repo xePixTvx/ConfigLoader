@@ -7,6 +7,12 @@ using ConfigLoader.Error;
 
 
 /*
+ *      LAST WORKED ON:
+ *                          ERROR Handling
+ */
+
+
+/*
  *      TODO:
  *              ERROR Handling
  */
@@ -47,20 +53,13 @@ namespace ConfigLoader
             //Lex
             Lexer lex = new Lexer();
             LexedLines = lex.LexConfigFile(FilePath);
-            if(LexedLines == null)
-            {
-                Console.WriteLine("Lexing Failed!");
-            }
-            else
+            if(LexedLines != null)
             {
                 //Parse
                 Parser pars = new Parser();
                 ParsedLines = pars.ParseContext(LexedLines);
-                if (ParsedLines == null)
-                {
-                    Console.WriteLine("Parsing Failed!");
-                }
-                else
+
+                if (ParsedLines != null)
                 {
                     Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
 

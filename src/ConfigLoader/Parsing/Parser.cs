@@ -35,28 +35,28 @@ namespace ConfigLoader.Parsing
                         //Check if line context ends with ";"
                         if (!var_context.EndsWith(";"))
                         {
-                            Console.WriteLine("BAD SYNTAX @ " + (Line.LinePos + 1) + ": \";\" missing!");
+                            ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "BAD SYNTAX @ " + (Line.LinePos + 1) + ": \";\" missing!");
                             return null;
                         }
 
                         //Check if a var name can be found
                         if ((var_name == "") || (var_name == null))
                         {
-                            Console.WriteLine("BAD SYNTAX @ " + (Line.LinePos + 1) + ": No Dvar Name Defined!");
+                            ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "BAD SYNTAX @ " + (Line.LinePos + 1) + ": No Dvar Name Defined!");
                             return null;
                         }
 
                         //Check if Params part starts and ends with "{" and "}"
                         if((!Utils.Common.RemoveFromString(var_context.Split('=')[1], new string[] { " ", ";" }).StartsWith("{")) || (!Utils.Common.RemoveFromString(var_context.Split('=')[1], new string[] { " ", ";" }).EndsWith("}")))
                         {
-                            Console.WriteLine("BAD SYNTAX @ " + (Line.LinePos + 1) + ": \"{\" or \"}\" missing!");
+                            ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "BAD SYNTAX @ " + (Line.LinePos + 1) + ": \"{\" or \"}\" missing!");
                             return null;
                         }
 
                         //Check if we are able to get 3 params
                         if(Utils.Common.RemoveFromString(var_context.Split('=')[1], new string[] { " ", ";", "\"" }).Split(',').Length != 3)
                         {
-                            Console.WriteLine("BAD SYNTAX @ " + (Line.LinePos + 1) + ": Parameter or \",\" missing!");
+                            ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "BAD SYNTAX @ " + (Line.LinePos + 1) + ": Parameter or \",\" missing!");
                             return null;
                         }
 
@@ -77,7 +77,7 @@ namespace ConfigLoader.Parsing
                         Dvar.DvarTypes DefaultValueVarType = CheckDvarType(param_defaultValue);
                         if(VarType != DefaultValueVarType)
                         {
-                            Console.WriteLine("BAD SYNTAX @ " + (Line.LinePos + 1) + ": Value and DefaultValue are not the same type!");
+                            ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "BAD SYNTAX @ " + (Line.LinePos + 1) + ": Value and DefaultValue are not the same type!");
                             return null;
                         }
 
@@ -86,7 +86,7 @@ namespace ConfigLoader.Parsing
                     }
                     catch
                     {
-                        Console.WriteLine("FATAL PARSING ERROR!");
+                        ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, "FATAL PARSING ERROR!");
                         return null;
                     }
                 }

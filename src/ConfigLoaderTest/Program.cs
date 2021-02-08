@@ -3,7 +3,7 @@ using System.IO;
 using ConfigLoader;
 
 namespace ConfigLoaderTest
-{
+{ 
     class Program
     {
         private static ConfigLoader.ConfigLoader Loader;
