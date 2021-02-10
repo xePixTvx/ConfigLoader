@@ -8,13 +8,12 @@ using ConfigLoader.Error;
 
 /*
  *      LAST WORKED ON:
- *                          ERROR Handling
  */
 
 
 /*
  *      TODO:
- *              ERROR Handling
+ *              Config Saving
  */
 
 
@@ -45,7 +44,7 @@ namespace ConfigLoader
 
         public void LoadConfig()
         {
-            Error = new ErrorHandler(true);
+            Error = new ErrorHandler(true, true);
 
             List<ContextLine> LexedLines;
             List<Dvar.Dvar> ParsedLines;
@@ -53,13 +52,13 @@ namespace ConfigLoader
             //Lex
             Lexer lex = new Lexer();
             LexedLines = lex.LexConfigFile(FilePath);
-            if(LexedLines != null)
+            if(Error.GetErrorTypeCount(ErrorTypes.Fatal) < 1)
             {
                 //Parse
                 Parser pars = new Parser();
                 ParsedLines = pars.ParseContext(LexedLines);
 
-                if (ParsedLines != null)
+                if(Error.GetErrorTypeCount(ErrorTypes.Fatal) < 1)
                 {
                     Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
 
@@ -68,7 +67,7 @@ namespace ConfigLoader
                 }
             }
 
-
+            Error.LogErrors();
         }
 
         public void SaveConfig()

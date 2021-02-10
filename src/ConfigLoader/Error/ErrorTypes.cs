@@ -6,8 +6,7 @@ namespace ConfigLoader.Error
 {
     public enum ErrorTypes
     {
-        Default,
-        Fatal,
-        Warning
+        Warning,
+        Fatal
     };
 }

@@ -57,7 +57,7 @@ namespace ConfigLoader.Lexing
             catch(Exception e)
             {
                 ConfigLoader.Error.Add(Error.ErrorTypes.Fatal, e.Message);
-                return null;
+                //return null;
             }
 
             //Return Lines List
