@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ConfigLoader.Dvar
@@ -11,15 +12,24 @@ namespace ConfigLoader.Dvar
 
         public DvarHandler(List<Dvar> ParsedLines)
         {
-            DvarListFull = new List<Dvar>();
-            foreach(Dvar var in ParsedLines)
+            /*foreach(Dvar v in ParsedLines)
             {
-                DvarListFull.Add(var);
-            }
+                Console.WriteLine(v.getValue() + " ---- " + v.getDefaultValue());
+            }*/
 
 
+            DvarListFull = ParsedLines;
+        }
 
-            Console.WriteLine("Full List Size: " + DvarListFull.Count);
+
+        public List<Dvar> GetFullDvarList()
+        {
+            return DvarListFull;
+        }
+
+        public List<Dvar> GetFullDvarListSortedByLinePos()
+        {
+            return DvarListFull.OrderBy(e => e.LinePos).ToList();
         }
 
 

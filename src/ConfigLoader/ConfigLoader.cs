@@ -8,11 +8,13 @@ using ConfigLoader.Error;
 
 /*
  *      LAST WORKED ON:
+ *                          Removing dynamic stuff from Dvar class
  */
 
 
 /*
  *      TODO:
+ *              Update Dvar cause dynamic type doesnt work
  *              Config Saving
  */
 
@@ -23,6 +25,7 @@ namespace ConfigLoader
     {
         private string filePath;
         private DvarHandler Handler;
+        private Writing.Writer ConfigWriter;
 
         public static ErrorHandler Error;
 
@@ -30,6 +33,7 @@ namespace ConfigLoader
         public ConfigLoader(string _filePath)
         {
             FilePath = _filePath;
+            ConfigWriter = new Writing.Writer();
         }
 
 
@@ -60,8 +64,6 @@ namespace ConfigLoader
 
                 if(Error.GetErrorTypeCount(ErrorTypes.Fatal) < 1)
                 {
-                    Console.WriteLine("Parsed: " + ParsedLines.Count + " Lines");
-
                     //Dvar Handler
                     Handler = new DvarHandler(ParsedLines);
                 }
@@ -72,7 +74,8 @@ namespace ConfigLoader
 
         public void SaveConfig()
         {
-            Console.WriteLine("Save");
+            ConfigWriter.WriteConfig(FilePath, Handler.GetFullDvarListSortedByLinePos());
+            Error.LogErrors();
         }
 
 

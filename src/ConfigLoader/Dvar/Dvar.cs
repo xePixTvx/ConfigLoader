@@ -11,7 +11,23 @@ namespace ConfigLoader.Dvar
         public string Name;
         public string InfoText;
 
-        private int IntValue;
+
+        public string Value;
+        public string DefaultValue;
+
+        public Dvar(DvarTypes type, int linePos, string name, string value, string defaultValue, string info)
+        {
+            Type = type;
+            LinePos = linePos;
+            Name = name;
+            InfoText = info;
+
+            Value = value;
+            DefaultValue = defaultValue;
+        }
+
+
+        /*private int IntValue;
         private int DefaultIntValue;
         private float FloatValue;
         private float DefaultFloatValue;
@@ -64,9 +80,47 @@ namespace ConfigLoader.Dvar
             BoolValue = value;
             DefaultBoolValue = defaultValue;
         }
+        */
 
 
-        public dynamic getValue()
+        /*public int getValueInt()
+        {
+            return IntValue;
+        }
+        public float getValueFloat()
+        {
+            return FloatValue;
+        }
+        public string getValueString()
+        {
+            return StringValue;
+        }
+        public bool getValueBool()
+        {
+            return BoolValue;
+        }
+
+
+        public int getDefaultValueInt()
+        {
+            return DefaultIntValue;
+        }
+        public float getDefaultValueFloat()
+        {
+            return DefaultFloatValue;
+        }
+        public string getDefaultValueString()
+        {
+            return DefaultStringValue;
+        }
+        public bool getDefaultValueBool()
+        {
+            return DefaultBoolValue;
+        }
+        */
+
+
+        /*public dynamic getValue()
         {
             switch(Type)
             {
@@ -82,11 +136,14 @@ namespace ConfigLoader.Dvar
                 case DvarTypes.BOOL:
                     return BoolValue;
 
+                case DvarTypes.IGNORE:
+                    return StringValue;
+
                 default:
                     return null;
             }
-        }
-        public dynamic getDefaultValue()
+        }*/
+        /*public dynamic getDefaultValue()
         {
             switch (Type)
             {
@@ -102,10 +159,13 @@ namespace ConfigLoader.Dvar
                 case DvarTypes.BOOL:
                     return DefaultBoolValue;
 
+                case DvarTypes.IGNORE:
+                    return StringValue;
+
                 default:
                     return null;
             }
-        }
+        }*/
 
     }
 }

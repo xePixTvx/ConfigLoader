@@ -46,7 +46,7 @@ namespace ConfigLoader.Error
             int ErrorCount_Warning = GetErrorTypeCount(ErrorTypes.Warning);
             int ErrorCount_Fatal = GetErrorTypeCount(ErrorTypes.Fatal);
 
-            printError(" ----- ConfigLoader ----- ", ConsoleColor.Green);
+            printError(" ----- ConfigLoader Error Info ----- ", ConsoleColor.Green);
             printError("Warnings: " + ErrorCount_Warning, ConsoleColor.Yellow);
             printError("Fatal Errors: " + ErrorCount_Fatal, ConsoleColor.Red);
             if((ErrorCount_Warning > 0) || (ErrorCount_Fatal > 0))
@@ -59,7 +59,7 @@ namespace ConfigLoader.Error
                 printError(err.Message, ((err.Type == ErrorTypes.Warning) ? ConsoleColor.Yellow : ConsoleColor.Red));
             }
 
-            printError(" ------------------------ ", ConsoleColor.Green);
+            printError(" ----------------------------------- ", ConsoleColor.Green);
 
             if(LogToFile)
             {

@@ -13,12 +13,17 @@ namespace ConfigLoader.Parsing
         {
             List<Dvar.Dvar> DvarList = new List<Dvar.Dvar>();
 
+            if(contextLines.Count < 1)
+            {
+                ConfigLoader.Error.Add(Error.ErrorTypes.Warning, "Config File is Empty!");
+            }
+
             foreach(ContextLine Line in contextLines)
             {
                 if((Line.Type == ContextTypes.EMPTY) || (Line.Type == ContextTypes.COMMENT))
                 {
                     //Empty and Comment Lines
-                    DvarList.Add(new Dvar.Dvar(Dvar.DvarTypes.IGNORE, Line.LinePos, "", Line.Context, "", ""));
+                    DvarList.Add(new Dvar.Dvar(Dvar.DvarTypes.IGNORE, Line.LinePos, "", Line.Context.ToString(), "", ""));
                 }
                 else
                 {
@@ -82,6 +87,7 @@ namespace ConfigLoader.Parsing
                         }
 
                         //add dvar
+                        Console.WriteLine(param_value);
                         DvarList.Add(new Dvar.Dvar(VarType, Line.LinePos, var_name, param_value, param_defaultValue, param_infoText));
                     }
                     catch

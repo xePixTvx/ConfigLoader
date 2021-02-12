@@ -13,6 +13,10 @@ namespace ConfigLoaderTest
         {
             Loader = new ConfigLoader.ConfigLoader(Path.Combine(Environment.CurrentDirectory, "configs", "test.cfg"));
             Loader.LoadConfig();
+
+            Console.ReadKey();
+
+            Loader.SaveConfig();
         }
     }
 }
